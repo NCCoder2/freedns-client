@@ -205,7 +205,7 @@ class Client:
       raise RuntimeError("Failed to create subdomain. Error: "+error_message)
   
   def update_subdomain(self, subdomain_id, captcha_code, **kwargs):
-    update_subdomain_url = BASE_URL+"/subdomain/save.php?step=2"
+    update_subdomain_url = BASE_URL+"/subdomain/edit.php?edit_domain_id=" + get_arg("domain_id")
 
     defaults = self.get_subdomain_details(subdomain_id)
     get_arg = lambda x: kwargs.get(x) or defaults[x]
