@@ -187,7 +187,7 @@ class Client:
     return subdomains
   
   def create_subdomain(self, captcha_code, record_type, subdomain, domain_id, destination):
-    create_subdomain_url = BASE_URL+"/subdomain/save.php?step=2"
+    create_subdomain_url = BASE_URL+"/subdomain/edit.php?edit_domain_id="+domain_id
     payload = {
       "type": record_type,
       "subdomain": subdomain,
